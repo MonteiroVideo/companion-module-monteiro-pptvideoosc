@@ -63,7 +63,7 @@ class PptVideo extends InstanceBase {
 					this.setVariableValues({ slide_info: slideInfo });
 					this.log('info', `Received slide info: ${slideInfo}`);
 				}
-			    else if (hours && minutes && seconds && time) {
+			    	if (hours && minutes && seconds && time) {
 					this.setVariableValues({
 						timer_hours: hours,
 						timer_minutes: minutes,
