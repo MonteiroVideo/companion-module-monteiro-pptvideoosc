@@ -2,6 +2,7 @@ import { InstanceBase, InstanceStatus, runEntrypoint, TCPHelper } from '@compani
 import { ConfigFields } from './config.js'
 import { getActionDefinitions } from './actions.js'
 import { getPresetDefinitions } from './presets.js'
+import { getVariableDefinitions } from './variables.js';
 
 class PptVideo extends InstanceBase {
 	async init(config) {
@@ -83,17 +84,8 @@ class PptVideo extends InstanceBase {
 		}
 	}
   init_tcp_variables() {
-      const variables = [
-        { name: 'Timer', variableId: 'timer' },
-        { name: 'Timer Hours', variableId: 'timer_hours' },
-        { name: 'Timer Minutes', variableId: 'timer_minutes' },
-        { name: 'Timer Seconds', variableId: 'timer_seconds' },
-        { name: 'Slide Info', variableId: 'slide_info' }, // Nova variável adicionada
-
-      ];
-
-      this.setVariableDefinitions(variables);
-
+        const variables = getVariableDefinitions(); // Usa a função importada
+        this.setVariableDefinitions(variables);
     }
 }
 
